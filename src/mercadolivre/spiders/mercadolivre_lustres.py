@@ -26,7 +26,8 @@ class MercadolivreLustresSpider(scrapy.Spider):
                'is_free_ship': product.css('span.ui-pb-highlight::text').get(),
                'is_full': product.css('span.ui-pb-label::text').get(),
                'is_ads': product.css('label.ui-search-styled-label.ui-search-item__pub-label::text').get(),
-               'page': self.page_count 
+               'page': self.page_count,
+               'search': self.start_urls[0]
            } 
         
         if self.page_count < self.max_pages:
